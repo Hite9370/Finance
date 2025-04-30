@@ -1,5 +1,7 @@
 {
   "version": 2,
+  "buildCommand": "cd client && npm run build",
+  "outputDirectory": "client/dist",
   "builds": [
     {
       "src": "server/index.ts",
@@ -16,8 +18,11 @@
       "dest": "/server/index.ts"
     },
     {
+      "handle": "filesystem"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/client/dist/$1"
+      "dest": "/client/dist/index.html"
     }
   ]
 }
